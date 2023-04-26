@@ -1,6 +1,11 @@
+import Header from '../components/common/header'
+
 const Home = ()=>{
 
-  return(<h1>Main 화면</h1>);
+  return(
+  <Header/>
+  
+  );
 }
 
 export default Home;
