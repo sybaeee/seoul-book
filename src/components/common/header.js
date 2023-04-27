@@ -1,7 +1,13 @@
 import { HeaderWrap, HearderLIstWrap, HearderList, LoginButton, LoginWrap, LogoWrap, MembershipButton } from "@/styles/common/header.style";
+import { useState } from "react";
 
 
 const Header = () =>{
+  const [isLogin, setIsLogin] = useState(false)
+  const LoginSuccess = () =>{
+    setIsLogin(!isLogin)
+  }
+
   return(
   <HeaderWrap>
     <LogoWrap>
@@ -14,10 +20,16 @@ const Header = () =>{
         <li>실시간 예약</li>
         <li>커뮤니티</li>
       </HearderList>
+      {
+      isLogin == false ?
       <LoginWrap>
-      <LoginButton>로그인</LoginButton>
+      <LoginButton onClick={LoginSuccess}>로그인</LoginButton>
       <MembershipButton>회원가입</MembershipButton>
+      </LoginWrap> :
+       <LoginWrap>
+      <LoginButton onClick={LoginSuccess}>로그아웃</LoginButton>
       </LoginWrap>
+      }
     </HearderLIstWrap>
     </HeaderWrap>
   )
