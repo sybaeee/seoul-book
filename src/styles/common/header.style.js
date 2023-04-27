@@ -8,7 +8,7 @@ export const HeaderWrap = styled.header`
  margin: 0 auto;
  display: flex;
  justify-content: space-between;
- max-width: 1200px;
+ max-width: 1250px;
  min-width: 700px;
 `
 export const LogoWrap = styled.div`
