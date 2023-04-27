@@ -3,6 +3,7 @@ import { useState } from "react";
 
 
 const Header = () =>{
+
   const [isLogin, setIsLogin] = useState(false)
   const LoginSuccess = () =>{
     setIsLogin(!isLogin)
@@ -27,7 +28,8 @@ const Header = () =>{
       <MembershipButton>회원가입</MembershipButton>
       </LoginWrap> :
        <LoginWrap>
-      <LoginButton onClick={LoginSuccess}>로그아웃</LoginButton>
+      <LoginButton>마이페이지</LoginButton>
+      <MembershipButton onClick={LoginSuccess}>로그아웃</MembershipButton>
       </LoginWrap>
       }
     </HearderLIstWrap>
