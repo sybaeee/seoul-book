@@ -10,7 +10,7 @@ export const FormContainer = styled.div`
   justify-content: center;
   //background-color는 굳이 안넣어도............
   background-color: #f3f3f3;
-  width: 1000px;
+  padding: 100px 20px;
 `;
 
 export const FormWrapper = styled.form`
@@ -100,6 +100,6 @@ export const Button = styled.button`
 export const ButtonBox = styled.div`
   display: flex;
   align-self: end;
-  margin-top: 70px;
+  margin-top: 200px;
   column-gap: 7px;
 `;
