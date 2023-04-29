@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import Head from "next/head";
 
 const FormContainer = styled.div`
   display: flex;
@@ -74,9 +72,6 @@ const Detail = () => {
   };
   return (
     <>
-      <Head>
-        <title>Detail Page</title>
-      </Head>
       <FormContainer>
         <FormWrapper>
           <h1>Detail Page</h1>
@@ -84,7 +79,9 @@ const Detail = () => {
           <Input type="Date" placeholder="Date" />
           <Input type="Region" placeholder="Region" />
           <Select value={selectedOption} onChange={handleSelectChange}>
-            <Option value="">Gender</Option>
+            <Option value="" disabled selected>
+              Gender
+            </Option>
             <Option value="option1">성별 무관</Option>
             <Option value="option2">여자</Option>
             <Option value="option3">남자</Option>
