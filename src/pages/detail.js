@@ -1,63 +1,19 @@
 import React, { useState } from "react";
-import styled from "@emotion/styled";
-
-const FormContainer = styled.div`
-  display: flex;
-`;
-
-const FormWrapper = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-`;
-
-const Input = styled.input`
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-`;
-
-const Select = styled.select`
-  width: 200px;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  appearance: none;
-  background-color: #fff;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px top 50%;
-  cursor: pointer;
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
-  }
-  option:first-of-type {
-    display: none;
-  }
-`;
-
-const Option = styled.option`
-  padding: 10px;
-`;
-
-const Button = styled.button`
-  color: #fff;
-  font-weight: 400;
-  font-size: 20px;
-  width: 120px;
-  height: 50px;
-  background: rgba(58, 55, 56, 0.8);
-  border-radius: 15px;
-  border: none;
-  cursor: pointer;
-`;
-
-const ButtonBox = styled.div``;
+import { OPTION_LIST } from "@/constant/list";
+import {
+  Wrapper,
+  FormContainer,
+  FormWrapper,
+  Text,
+  Title,
+  Input,
+  DateInput,
+  InputText,
+  Select,
+  Option,
+  ButtonBox,
+  Button,
+} from "@/style/detail.style";
 
 const Detail = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -66,35 +22,46 @@ const Detail = () => {
     setSelectedOption(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(selectedOption);
+  const handleSubmit = () => {
+    // event.preventDefault();
+    console.log("폼을 제출했습니다.");
   };
+
   return (
-    <>
+    <Wrapper>
       <FormContainer>
         <FormWrapper>
-          <h1>Detail Page</h1>
+          <Text>Register your place!</Text>
+          <Title>Title</Title>
           <Input type="Title" placeholder="Title" />
-          <Input type="Date" placeholder="Date" />
+          <Title>Date</Title>
+          <DateInput type="Date" placeholder="Date" />
+          <Title>Location</Title>
+          <Input type="Location" placeholder="Adress" />
+          <Title>Region</Title>
           <Input type="Region" placeholder="Region" />
+          <Title>Gender</Title>
           <Select value={selectedOption} onChange={handleSelectChange}>
             <Option value="" disabled selected>
               Gender
             </Option>
-            <Option value="option1">성별 무관</Option>
-            <Option value="option2">여자</Option>
-            <Option value="option3">남자</Option>
+            {OPTION_LIST.map((option) => (
+              <Option key={option.value}>{option.label}</Option>
+            ))}
           </Select>
+          <Title>Introduction</Title>
           <Input type="Introduction" placeholder="Introduction" />
-          <Input type="Text" placeholder="Start typing here" />
+          <Title>Text</Title>
+          <InputText type="Text" />
           <ButtonBox>
-            <Button>Cancel</Button>
-            <Button>Submit</Button>
+            <Button onClick={() => console.log("폼을 제출했습니다.")}>
+              Cancel
+            </Button>
+            <Button onClick={handleSubmit}>Submit</Button>
           </ButtonBox>
         </FormWrapper>
       </FormContainer>
-    </>
+    </Wrapper>
   );
 };
 
