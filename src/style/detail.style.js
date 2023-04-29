@@ -3,112 +3,91 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  /* width: 1200px; */
 `;
 
-export const FormContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  //background-color는 굳이 안넣어도............
-  background-color: #f3f3f3;
-  padding: 100px 20px;
+export const Container = styled.div`
+  margin-top: 100px;
+  margin-bottom: 300px;
 `;
 
-export const FormWrapper = styled.form`
+export const Section = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  max-width: 800px;
 `;
 
-export const Text = styled.div`
-  font-size: 34px;
-  font-weight: 700;
-  align-self: start;
-  margin-bottom: 70px;
+export const ProfileBox = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+export const Writer = styled.div`
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: pink;
+  font-size: 5px;
+`;
+
+export const WriterName = styled.div`
+  align-self: center;
 `;
 
 export const Title = styled.div`
-  align-self: start;
-  margin-top: 12px;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 61px;
+  margin-bottom: 40px;
 `;
 
-export const Input = styled.input`
-  width: 700px;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-`;
-
-export const DateInput = styled.input`
-  align-self: start;
-  width: 200px;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-`;
-
-export const InputText = styled.input`
-  width: 700px;
-  min-height: 500px;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-`;
-
-export const InputIntroduction = styled.input`
-  width: 700px;
-  min-height: 200px;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-`;
-
-export const Select = styled.select`
-  align-self: start;
-  width: 200px;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  appearance: none;
-  background-color: #fff;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px top 50%;
-  cursor: pointer;
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
-  }
-  option:first-of-type {
-    display: none;
-  }
-`;
-
-export const Option = styled.option`
-  width: 200px;
-  padding: 10px;
-`;
-
-export const Button = styled.button`
-  color: #fff;
+export const SubTitle = styled.div`
   font-weight: 400;
   font-size: 20px;
-  width: 120px;
-  height: 50px;
-  background: rgba(58, 55, 56, 0.8);
-  border-radius: 15px;
-  border: none;
-  cursor: pointer;
+  line-height: 24px;
+  margin-bottom: 70px;
 `;
 
-export const ButtonBox = styled.div`
+export const Text = styled.div`
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+`;
+
+export const Bar = styled.div`
+  width: 800px;
+  height: 2px;
+  background-color: #ada7a9;
+  margin-top: 70px;
+  margin-bottom: 100px;
+`;
+
+export const TopBox = styled.div`
+  margin-top: 70px;
+`;
+
+export const Box = styled.div`
   display: flex;
-  align-self: end;
-  margin-top: 200px;
-  column-gap: 7px;
+  flex-direction: row;
+  column-gap: 30px;
+  margin-top: 20px;
+  align-items: center;
+`;
+
+export const BoxTitle = styled.div`
+  width: 110px;
+  height: 34px;
+  background: #d9d9d9;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 6px;
+`;
+
+export const BoxText = styled.div`
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 24px;
+  color: #3a3738;
 `;
