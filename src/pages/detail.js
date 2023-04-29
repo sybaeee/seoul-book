@@ -9,6 +9,7 @@ import {
   Input,
   DateInput,
   InputText,
+  InputIntroduction,
   Select,
   Option,
   ButtonBox,
@@ -31,16 +32,17 @@ const Detail = () => {
     <Wrapper>
       <FormContainer>
         <FormWrapper>
-          <Text>Register your place!</Text>
+          <Text>Register place!</Text>
           <Title>Title</Title>
-          <Input type="Title" placeholder="Title" />
-          <Title>Date</Title>
-          <DateInput type="Date" placeholder="Date" />
+          <Input type="Title" />
+          {/* 여행지 등록 페이지라 일단 주석처리 했습니다 */}
+          {/* <Title>Date</Title>
+          <DateInput type="Date" placeholder="Date" /> */}
           <Title>Location</Title>
-          <Input type="Location" placeholder="Adress" />
-          <Title>Region</Title>
-          <Input type="Region" placeholder="Region" />
-          <Title>Gender</Title>
+
+          <Input type="Region" />
+          {/* 여행지 등록 페이지라 일단 주석처리 했습니다 */}
+          {/* <Title>Gender</Title>
           <Select value={selectedOption} onChange={handleSelectChange}>
             <Option value="" disabled selected>
               Gender
@@ -48,9 +50,9 @@ const Detail = () => {
             {OPTION_LIST.map((option) => (
               <Option key={option.value}>{option.label}</Option>
             ))}
-          </Select>
+          </Select> */}
           <Title>Introduction</Title>
-          <Input type="Introduction" placeholder="Introduction" />
+          <InputIntroduction type="Introduction" />
           <Title>Text</Title>
           <InputText type="Text" />
           <ButtonBox>

@@ -29,7 +29,7 @@ export const Text = styled.div`
 
 export const Title = styled.div`
   align-self: start;
-  margin-top: 10px;
+  margin-top: 12px;
 `;
 
 export const Input = styled.input`
@@ -52,6 +52,15 @@ export const DateInput = styled.input`
 export const InputText = styled.input`
   width: 700px;
   min-height: 500px;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+`;
+
+export const InputIntroduction = styled.input`
+  width: 700px;
+  min-height: 200px;
   margin: 10px 0;
   padding: 10px;
   border-radius: 8px;
