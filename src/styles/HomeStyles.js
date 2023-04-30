@@ -1,5 +1,11 @@
 import styled from '@emotion/styled'
 
+
+export const MainTextWrap = styled.div`
+display: flex;
+flex-direction:column;
+`
+
 export const MainWrap = styled.div`
 width: 1250px;
 max-width: 1250px;
@@ -51,9 +57,37 @@ padding: 20px 20px;
 
 export const AnimationTest= styled.div`
   text-align: center;
-  :hover{
+
+  
+`
+export const GuideLineWrap = styled.div`
+  width: 100%;
+  display: flex;
+
+`
+
+export const GuidLineContents = styled.div`
+box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+width: 405px;
+`
+export const PhotoSlideWrapper = styled.div`
+display: flex;
+flex-direction: row;
+gap: 10px;
+margin-top: 50px;
+overflow: hidden;
+
+`
+export const PhotoSlide = styled.div`
+width: 326px;
+height: 478px;
+background: url(namsanView.png);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border-radius: 34px;
+:hover{
     animation-name: identifier;
-    animation-duration: 1s;
+    animation-duration: 3s;
   }
   @keyframes identifier {
    0%{
@@ -71,5 +105,15 @@ export const AnimationTest= styled.div`
     transform: translateX(0px);
    } 
   }
-  
+`
+
+export const SliderButtonWrapper = styled.div`
+
+display: flex;
+margin-top: 30px;
+gap: 3px;
+`
+export const SliderButton = styled.button`
+padding: 10px;
+
 `

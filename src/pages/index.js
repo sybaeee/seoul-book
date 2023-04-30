@@ -1,13 +1,16 @@
 import Layout from '@/components/common/layout';
 import Header from '../components/common/header'
-import { AnimationTest, MainWrap, SubTextWrap, TextWrapper, VisitButton } from '@/styles/HomeStyles';
+import { AnimationTest, GuidLineContents, GuideLineWrap, MainTextWrap, MainWrap, PhotoSlide, PhotoSlideWrapper, SliderButton, SliderButtonWrapper, SubTextWrap, TextWrapper, VisitButton } from '@/styles/HomeStyles';
 import Image from "next/image";
-const Home = ()=>{
+import { useRouter } from 'next/router';
 
+const Home = ()=>{
+const router = useRouter()
   return(
     <>
   <Layout>
     <MainWrap>
+      <MainTextWrap>
      <TextWrapper>
       <span>서울</span>
       <span>B</span>
@@ -18,10 +21,18 @@ const Home = ()=>{
       <VisitButton>
       지금 방문하기
       </VisitButton>
-      <AnimationTest>
-        성현
-      </AnimationTest>
      </div>
+     </MainTextWrap>
+     <PhotoSlideWrapper>
+     <PhotoSlide onClick={()=>{router.push("/")}}></PhotoSlide>
+     <PhotoSlide onClick={()=>{router.push("/")}}></PhotoSlide>
+     <PhotoSlide onClick={()=>{router.push("/")}}></PhotoSlide>
+     <PhotoSlide onClick={()=>{router.push("/")}}></PhotoSlide>
+     </PhotoSlideWrapper>
+     <SliderButtonWrapper>
+     <SliderButton>prev</SliderButton>
+     <SliderButton>Next</SliderButton>
+     </SliderButtonWrapper>
       </MainWrap>
   </Layout>
     </>

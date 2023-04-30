@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 export const HeaderWrap = styled.header`
  margin-bottom: 20px;
- border: 1px solid black;
+
  /* width: 1250px; */
  margin: 0 auto;
  display: flex;
