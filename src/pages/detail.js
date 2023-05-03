@@ -14,7 +14,7 @@ import {
   ProfileBox,
   Writer,
   WriterName,
-} from "@/style/detail.style";
+} from "@/styles/detail.style";
 
 const Detail = () => {
   return (

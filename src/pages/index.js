@@ -1,6 +1,6 @@
 import Layout from '@/components/common/layout';
 import Header from '../components/common/header'
-import { AnimationTest, GuidLineContents, GuideLineWrap, MainTextWrap, MainWrap, PhotoSlide, PhotoSlideWrapper, SliderButton, SliderButtonWrapper, SubTextWrap, TextWrapper, VisitButton } from '@/styles/HomeStyles';
+import { AnimationTest, GuidLineContents, GuideLineWrap, MainTextWrap, MainWrap, PhotoSlide, PhotoSlideWrapper, SliderButton, SliderButtonWrapper, SubTextWrap, TextWrapper, VisitButton } from '@/styles/home.styles';
 import Image from "next/image";
 import { useRouter } from 'next/router';
 

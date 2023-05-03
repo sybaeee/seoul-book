@@ -6,7 +6,7 @@ import {
   Title,
   Select,
   Option,
-} from "@/style/detail.style";
+} from "@/styles/detail.style";
 import { Button, ButtonBox, FormContainer, FormWrapper, Input, InputIntroduction, InputText } from "@/style/registerForm.style";
 
 const RegisterForm = () => {
