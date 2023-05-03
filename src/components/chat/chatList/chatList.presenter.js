@@ -1,4 +1,4 @@
-import { ChatContent, ChatContentHostName, ChatContentPrImg, ChatContentTextWrap, ChatContentWrap, ChatHeader, ChatHeaderLogo, ChatHeaderTitle, ChatLastMessage, ChatListWrap } from "@/styles/chat/chat.styles";
+import { ChatContent, ChatContentHostName, ChatContentPrImg, ChatContentTextWrap, ChatContentWrap, ChatHeader, ChatHeaderLogo, ChatHeaderTitle, ChatLastMsg, ChatListWrap } from "@/styles/chat/chat.styles";
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 
@@ -15,7 +15,7 @@ const ChatListUI = () =>{
                     <ChatContentPrImg />
                     <ChatContentTextWrap>
                         <ChatContentHostName>Aaron Yang</ChatContentHostName>
-                        <ChatLastMessage>채팅 마지막 메세지 입니다.</ChatLastMessage>
+                        <ChatLastMsg>채팅 마지막 메세지 입니다.</ChatLastMsg>
                     </ChatContentTextWrap>
                     <DeleteForeverOutlinedIcon fontSize="large" />
                 </ChatContent>
@@ -23,7 +23,7 @@ const ChatListUI = () =>{
                     <ChatContentPrImg />
                     <ChatContentTextWrap>
                         <ChatContentHostName>Alex Park</ChatContentHostName>
-                        <ChatLastMessage>채팅 마지막 메세지 입니다.</ChatLastMessage>
+                        <ChatLastMsg>채팅 마지막 메세지 입니다.</ChatLastMsg>
                     </ChatContentTextWrap>
                     <DeleteForeverOutlinedIcon fontSize="large" />
                 </ChatContent>

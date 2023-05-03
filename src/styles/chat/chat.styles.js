@@ -69,8 +69,71 @@ export const ChatContentHostName = styled.div`
     font-size: 26px;
 
 `
-export const ChatLastMessage = styled.div`
+export const ChatLastMsg = styled.div`
     margin-top: 8px;
     font-size: 16px;
 
+`
+
+export const ChatMsgWrap = styled.div`
+    width: 100%
+`
+
+export const ChatUserMsg = styled.div`
+    display: inline-block;
+    word-break: break-all;
+    padding: 5px 10px;
+    margin: 10px 0 0 0;
+    max-width: 60%;
+    float: right;
+
+    background: #1B3E73;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+
+    font-size: 18px;
+    line-height: 26px;
+    color: #ffffff;
+
+`
+
+export const ChatHostMsg = styled.div`
+    display: inline-block;
+    word-break: break-all;
+    padding: 5px 10px;
+    margin: 10px 0 0 0;
+    border: 1px solid #E9E9E9;
+    max-width: 60%;
+    float: left;
+    
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+
+    font-size: 18px;
+    line-height: 26px;
+    color: #414042;
+`
+export const ChatTextInput = styled.textarea`
+    box-sizing: border-box;
+    width: 98.5%;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    background: #FFFFFF;
+    border: 1px solid #4C4C4C;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 26px;
+    color: #414042;
+
+    &:focus{
+        outline: none;
+    }
 `
