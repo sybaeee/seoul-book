@@ -20,6 +20,7 @@ export const HearderLIstWrap = styled.div`
 
 `
 export const HearderList = styled.ul`
+margin: 20px;
 list-style: none;
 display: flex;
 cursor: pointer;
@@ -37,7 +38,7 @@ gap: 10px;
 
 export const LoginButton = styled.button`
 border-style: none;
-background-color: #fff;
+background-color: unset;
 cursor: pointer;
 `
 

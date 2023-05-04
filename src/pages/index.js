@@ -1,12 +1,46 @@
 import Layout from '@/components/common/layout';
 import Header from '../components/common/header'
-import { AnimationTest, GuidLineContents, GuideLineWrap, MainTextWrap, MainWrap, PhotoSlide, PhotoSlideWrapper, SliderButton, SliderButtonWrapper, SubTextWrap, TextWrapper, VisitButton } from '@/styles/home.styles';
-import Image from "next/image";
+import { AnimationTest, GuidLineContents, GuideLineWrap, KoreaVideo, MainTextWrap, MainWrap, PhotoSlide, PhotoSlideWrapper, SliderButton, SliderButtonWrapper, SubTextWrap, TextWrapper, VisitButton } from '@/styles/home.styles';
 import { useRouter } from 'next/router';
+import palace from '../../public/videos/palace57566.mp4'
+import { useState } from 'react';
+import Slider from '@/components/slider/Slider';
 
 const Home = ()=>{
-const router = useRouter()
-  return(
+
+const sliderData = [
+  {
+    index:1,
+    imgSrc: 'namsanView.png.',
+    link: '/',
+  },
+  { 
+    imgSrc: 'namsanView.png.',
+    link: '/',
+  },
+  {
+    imgSrc: 'namsanView.png',
+    link: '/detail',
+  },
+  {
+    imgSrc: 'namsanView.png',
+    link: '/detail',
+  },
+  {
+    imgSrc: 'namsanView.png',
+    link: '/',
+  },
+  {
+    imgSrc: 'namsanView.png',
+    link: '/',
+  },
+  {
+    imgSrc: 'namsanView.png',
+    link: '/',
+  },
+];
+
+return(
     <>
   <Layout>
     <MainWrap>
@@ -22,17 +56,12 @@ const router = useRouter()
       지금 방문하기
       </VisitButton>
      </div>
+     
      </MainTextWrap>
-     <PhotoSlideWrapper>
-     <PhotoSlide onClick={()=>{router.push("/")}}></PhotoSlide>
-     <PhotoSlide onClick={()=>{router.push("/")}}></PhotoSlide>
-     <PhotoSlide onClick={()=>{router.push("/")}}></PhotoSlide>
-     <PhotoSlide onClick={()=>{router.push("/")}}></PhotoSlide>
-     </PhotoSlideWrapper>
-     <SliderButtonWrapper>
-     <SliderButton>prev</SliderButton>
-     <SliderButton>Next</SliderButton>
-     </SliderButtonWrapper>
+        <Slider sliderData={sliderData}/>
+     {/* <KoreaVideo autoPlay muted loop >
+    <source src={palace} type="video/mp4" />
+    </KoreaVideo> */}
       </MainWrap>
   </Layout>
     </>

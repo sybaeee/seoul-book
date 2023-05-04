@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 export const MainTextWrap = styled.div`
 display: flex;
 flex-direction:column;
+z-index: 1;
 `
 
 export const MainWrap = styled.div`
@@ -77,9 +78,11 @@ flex-direction: row;
 gap: 10px;
 margin-top: 50px;
 overflow: hidden;
-
+transition: 3s ease;
 `
 export const PhotoSlide = styled.div`
+
+flex-shrink: 0;
 width: 326px;
 height: 478px;
 background: url(namsanView.png);
@@ -115,5 +118,16 @@ gap: 3px;
 `
 export const SliderButton = styled.button`
 padding: 10px;
+
+`
+export const KoreaVideo = styled.video`
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
 
 `
