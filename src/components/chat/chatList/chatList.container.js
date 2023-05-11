@@ -1,7 +1,6 @@
 import ChatListUI from "./chatList.presenter"
 
-const ChatList = () =>
-{
+const ChatList = () =>{
     return(
         <ChatListUI />
 
