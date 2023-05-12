@@ -1,14 +1,22 @@
+import { useState } from "react";
 import { ChatDateTime, ChatHeader, ChatHeaderTitle, ChatHostMsg, ChatListWrap, ChatMsgWrap, ChatTextInput, ChatUserMsg, ChatWrap } from "@/styles/chat/chat.styles";
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 
 
 const ChatPageUI = ({
-    inputText,
-    userMsg,
-    chatEnterDown
+    inputText
 }) => {
-    return(
+    const [msgList, setMsgList] = useState([]);
+
+    const handleUserMsg = (e) => {
+        if (e.key === "Enter" && e.target.value) {
+            setMsgList([...msgList, e.target.value]);
+            e.target.value = "";
+        }
+    };
+
+    return (
         <ChatWrap>
             <ChatListWrap>
                 <ChatHeader>
@@ -17,19 +25,22 @@ const ChatPageUI = ({
                     <CloseOutlinedIcon fontSize="medium" />
                 </ChatHeader>
                 <ChatMsgWrap>
-                    <ChatHostMsg>호스트 채팅 영역 입니다. test test test test test test test test test test test test test test test test 
-                    test test test test test test test test test test test test test test test test
-                    test test test test test test test test test test test test test test test test
+                    <ChatHostMsg>
+                        호스트 채팅 영역입니다. test test test test test test test test test test test test test test test test 
+                        test test test test test test test test test test test test test test test test
+                        test test test test test test test test test test test test test test test test
                     </ChatHostMsg>
-                    
                     <p></p>
-                    <ChatUserMsg>게스트 채팅 영역 입니다. test test test test test test test test test test test test test test test test </ChatUserMsg>
+                    <ChatUserMsg>
+                        게스트 채팅 영역입니다. test test test test test test test test test test test test test test test test 
+                    </ChatUserMsg>
                     <p></p>
-                    {userMsg}
-
+                    {msgList.map((msg, idx) => (
+                        <ChatUserMsg key={idx}>{msg}</ChatUserMsg>
+                    ))}
                 </ChatMsgWrap>
             </ChatListWrap>       
-            <ChatTextInput ref={inputText} onKeyDown={(e)=>chatEnterDown(e)}></ChatTextInput>
+            <ChatTextInput ref={inputText} onKeyDown={handleUserMsg}></ChatTextInput>
         </ChatWrap>
     );
 }
