@@ -14,6 +14,8 @@ import {
   ProfileBox,
   Writer,
   WriterName,
+  BottomBox,
+  Review,
 } from "@/styles/detail.style";
 
 const Detail = () => {
@@ -34,7 +36,7 @@ const Detail = () => {
             <BoxText>free</BoxText>
           </Box>
           <Box>
-            <BoxTitle>business hours</BoxTitle>
+            <BoxTitle>hours</BoxTitle>
             <BoxText>24 hours</BoxText>
           </Box>
         </TopBox>
@@ -70,6 +72,9 @@ const Detail = () => {
             Ttukseom Hangang Park! Let's play together at Ttukseom Hangang Park!
           </Text>
         </Section>
+        <BottomBox>
+          <Review>Review</Review>
+        </BottomBox>
       </Container>
     </Wrapper>
   );

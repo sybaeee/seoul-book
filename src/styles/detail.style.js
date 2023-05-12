@@ -91,3 +91,19 @@ export const BoxText = styled.div`
   line-height: 24px;
   color: #3a3738;
 `;
+
+export const BottomBox = styled.div`
+  margin-top: 250px;
+  display: flex;
+  justify-content: end;
+`;
+
+export const Review = styled.button`
+  background: #d9d9d9;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding: 15px 30px;
+  cursor: pointer;
+`;
