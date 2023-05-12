@@ -82,22 +82,24 @@ export const ChatLastMsg = styled.div`
 `
 
 export const ChatMsgWrap = styled.div`
-    width: 100%
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
 `
 
 export const ChatHostMsg = styled.div`
-    display: inline-block;
     word-break: break-all;
     padding: 5px 10px;
     margin: 10px 10px 0 0;
     max-width: 60%;
-    float: right;
+    align-self: flex-end;
+    white-space: pre-wrap;
 
     background: #fff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     border: 1px solid #E9E9E9;
-
 
     font-size: 12px;
     line-height: 26px;
@@ -106,13 +108,13 @@ export const ChatHostMsg = styled.div`
 `
 
 export const ChatUserMsg = styled.div`
-    display: inline-block;
     word-break: break-all;
     padding: 5px 10px;
     margin: 10px 0 0 10px;
     max-width: 60%;
-    float: left;
-    
+    white-space: pre-wrap;
+    flex-grow: 0;
+    flex-basis: auto;
 
     background: #1B3E73;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
