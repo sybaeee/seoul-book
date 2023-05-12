@@ -63,13 +63,11 @@ const IconBox = styled.div`
 
 const CardData = styled.p`
 margin: 14px 0 8px 0;
-  font-size: 34px;
-
+  font-size: 20px;
   color: rgb(18, 25, 38);
 `;
 const CardTitle = styled.p`
-  font-size: 16px;
-
+  font-size: 14px;
   color: rgb(105, 117, 134);
 `;
 

@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
-import TotalLikeOverviewItem from "./totalLikeOverviewItem";
-import TotalCustomerOverviewItem from "./totalCustomerOverviewItem";
-import TotalProductOverviewItem from "./totalProductOverviewItem";
-import TotalPlaceOverviewItem from "./totalPlaceOverviewItem";
+import TotalLikeOverviewItem from "./dashboardOverviewItems/totalLikeOverviewItem";
+import TotalCustomerOverviewItem from "./dashboardOverviewItems/totalCustomerOverviewItem";
+import TotalProductOverviewItem from "./dashboardOverviewItems/totalProductOverviewItem";
+import TotalPlaceOverviewItem from "./dashboardOverviewItems/totalPlaceOverviewItem";
+import ChatOverview from "./dashboardOverviewItems/chatOverview";
+import ReviewOverview from "./dashboardOverviewItems/reviewOverview";
 
 const Overview = ()=>{
   return(
@@ -32,10 +34,10 @@ const Overview = ()=>{
       <Grid item xs={12}>
         <Grid container spacing={3} flexWrap={'wrap'}>
           <Grid item sm={8} xs={12}>
-            <OverviewCard >ddd</OverviewCard>
+            <ReviewOverview/>
           </Grid>
           <Grid item sm={4} xs={12}>
-            <TotalLikeOverviewItem/>
+            <ChatOverview/>
           </Grid>
         </Grid>
       </Grid>
