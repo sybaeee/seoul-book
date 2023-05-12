@@ -130,7 +130,7 @@ export const ReviewText = styled.div`
 export const ReviewBar = styled.div`
   width: 230px;
   height: 2px;
-  background-color: #ada7a9;
+  background-color: #fff;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 8px;
