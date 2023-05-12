@@ -1,20 +1,13 @@
-import { useState } from "react";
-import { ChatDateTime, ChatHeader, ChatHeaderTitle, ChatHostMsg, ChatListWrap, ChatMsgWrap, ChatTextInput, ChatUserMsg, ChatWrap } from "@/styles/chat/chat.styles";
+import { ChatHeader, ChatHeaderTitle, ChatHostMsg, ChatListWrap, ChatMsgWrap, ChatTextInput, ChatUserMsg, ChatWrap } from "@/styles/chat/chat.styles";
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 
 
 const ChatPageUI = ({
-    inputText
+    inputText,
+    chatEnterDown,
+    msgList
 }) => {
-    const [msgList, setMsgList] = useState([]);
-
-    const handleUserMsg = (e) => {
-        if (e.key === "Enter" && e.target.value) {
-            setMsgList([...msgList, e.target.value]);
-            e.target.value = "";
-        }
-    };
 
     return (
         <ChatWrap>
@@ -40,7 +33,7 @@ const ChatPageUI = ({
                     ))}
                 </ChatMsgWrap>
             </ChatListWrap>       
-            <ChatTextInput ref={inputText} onKeyDown={handleUserMsg}></ChatTextInput>
+            <ChatTextInput ref={inputText} onKeyDown={chatEnterDown}></ChatTextInput>
         </ChatWrap>
     );
 }
