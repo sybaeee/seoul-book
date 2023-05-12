@@ -16,7 +16,12 @@ import {
   WriterName,
   BottomBox,
   Review,
+  ReviewCard,
+  ReviewText,
+  ReviewTitle,
+  ReviewBar,
 } from "@/styles/detail.style";
+import ReviewTile from "@/components/dashboard/dashboardOverviewItems/reviewCard";
 
 const Detail = () => {
   return (
@@ -72,8 +77,36 @@ const Detail = () => {
             Ttukseom Hangang Park! Let's play together at Ttukseom Hangang Park!
           </Text>
         </Section>
+        <Review>Review</Review>
         <BottomBox>
-          <Review>Review</Review>
+          <ReviewCard>
+            <ReviewTitle>Review입니다</ReviewTitle>
+            <ReviewBar />
+
+            <ReviewText>
+              goooood very good goooood very good goooood very good goooood very
+              good
+            </ReviewText>
+          </ReviewCard>
+          <ReviewCard>
+            <ReviewTitle>Review입니다</ReviewTitle>
+            <ReviewBar />
+
+            <ReviewText>
+              goooood very good goooood very good goooood very good goooood very
+              good
+            </ReviewText>
+          </ReviewCard>
+          <ReviewCard>
+            <ReviewTitle>Review입니다</ReviewTitle>
+            <ReviewBar />
+            <ReviewText>
+              goooood very good goooood very good goooood very good goooood very
+              good goooood very good goooood very good goooood very good goooood
+              very good goooood very good goooood very good goooood very good
+              goooood very good
+            </ReviewText>
+          </ReviewCard>
         </BottomBox>
       </Container>
     </Wrapper>
