@@ -9,7 +9,6 @@ const MapSelect = () => {
 
   return (
     <>
-      <Layout />
       <MapPageWrapper>
         <MapPagePartWrapper>
           <MapPageContentsWrapper>강서구</MapPageContentsWrapper>

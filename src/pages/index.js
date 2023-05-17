@@ -44,7 +44,7 @@ const Home = () => {
 
   return (
     <>
-      <Layout>
+      <>
         <MainWrap>
           <MainTextWrap>
             <TextWrapper>
@@ -65,7 +65,7 @@ const Home = () => {
             <source src={palace} type="video/mp4" />
           </KoreaVideo>
         </MainWrap>
-      </Layout>
+      </>
     </>
   );
 }
