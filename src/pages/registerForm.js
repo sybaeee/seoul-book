@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { OPTION_LIST } from "@/constant/list";
 import {
   Wrapper,
   Text,
   Title,
-  Select,
-  Option,
-} from "@/styles/detail.style";
-import { Button, ButtonBox, FormContainer, FormWrapper, Input, InputIntroduction, InputText } from "@/style/registerForm.style";
+  Button,
+  ButtonBox,
+  FormContainer,
+  FormWrapper,
+  Input,
+  InputIntroduction,
+  InputText,
+} from "@/style/registerForm.style";
 
 const RegisterForm = () => {
   const [selectedOption, setSelectedOption] = useState("");
