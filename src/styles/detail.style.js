@@ -93,47 +93,15 @@ export const BoxText = styled.div`
 `;
 
 export const BottomBox = styled.div`
-  margin-top: 250px;
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   max-width: 1200px;
   justify-content: space-between;
 `;
 
-export const Review = styled.button`
-  background: #d9d9d9;
-  border-radius: 40px;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  padding: 15px 30px;
-  width: 200px;
-  cursor: pointer;
+export const buttonBox = styled.div`
+  display: flex;
+  justify-content: center;
 `;
-
-export const ReviewCard = styled.button`
-  border-radius: 40px;
-  border-color: #000000;
-  width: 250px;
-  height: 350px;
-  cursor: pointer;
-`;
-
-export const ReviewTitle = styled.div`
-  height: 20px;
-`;
-
-export const ReviewText = styled.div`
-  height: 100px;
-`;
-
-export const ReviewBar = styled.div`
-  width: 230px;
-  height: 2px;
-  background-color: #fff;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 8px;
-`;
-
 // export const ReviewCard = styled.div``
