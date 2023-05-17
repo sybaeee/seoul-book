@@ -10,7 +10,7 @@ import {
   Input,
   InputIntroduction,
   InputText,
-} from "@/style/registerForm.style";
+} from "@/styles/registerForm.style";
 
 const RegisterForm = () => {
   const [selectedOption, setSelectedOption] = useState("");
