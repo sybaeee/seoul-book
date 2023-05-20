@@ -3,8 +3,8 @@ import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 
 
-const ChatListUI = () =>{
-    return(
+const ChatListUI = () => {
+    return (
         <ChatListWrap>
             <ChatHeader>
                 <ChatHeaderTitle>Chat List</ChatHeaderTitle>
