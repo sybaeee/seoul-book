@@ -19,6 +19,8 @@ export const AuthCard = styled.div`
   flex-wrap: wrap;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 30px;
   border-radius: 20px;
+  overflow: scroll;
+  max-height: 100%;
 
   @media screen and (min-width: 600px){
     max-width: 600px;
