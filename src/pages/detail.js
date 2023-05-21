@@ -30,6 +30,7 @@ import {
   Typography,
   CardActions,
 } from "@mui/material";
+import Note from "@/components/note";
 
 const Detail = () => {
   return (
@@ -85,6 +86,7 @@ const Detail = () => {
             Ttukseom Hangang Park! Let's play together at Ttukseom Hangang Park!
           </Text>
         </Section>
+        <Note />
         <CardActions sx={{ marginTop: 20, justifyContent: "end" }}>
           <Button sx={{ display: "flex" }} color="secondary">
             Review
