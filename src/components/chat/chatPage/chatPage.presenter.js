@@ -4,7 +4,7 @@ import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 
 
 const ChatPageUI = () => {
-    return(
+    return (
         <ChatListWrap>
             <ChatHeader>
                 <ArrowBackOutlinedIcon fontSize="large" />
@@ -12,11 +12,11 @@ const ChatPageUI = () => {
                 <CloseOutlinedIcon fontSize="large" />
             </ChatHeader>
             <ChatMsgWrap>
-                <ChatHostMsg>test test test test test test test test test test test test test test test test 
-                test test test test test test test test test test test test test test test test
-                test test test test test test test test test test test test test test test test
+                <ChatHostMsg>test test test test test test test test test test test test test test test test
+                    test test test test test test test test test test test test test test test test
+                    test test test test test test test test test test test test test test test test
                 </ChatHostMsg>
-                
+
                 <p></p>
                 <ChatUserMsg>test test test test test test test test test test test test test test test test </ChatUserMsg>
                 <p></p>
@@ -25,7 +25,7 @@ const ChatPageUI = () => {
 
 
             </ChatMsgWrap>
-        
+
 
 
         </ChatListWrap>
