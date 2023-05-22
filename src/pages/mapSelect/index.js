@@ -1,5 +1,4 @@
-import FindAddress from "@/API/KakaoAPIMap";
-import Layout from "@/components/common/layout"
+
 import { MapPageContentsWrapper, MapPagePartWrapper, MapPageWrapper, PhotoModalContents, PhotoModalContentsWrap, PhotoSlideModal } from "@/styles/mapSelect.style"
 import { useState } from "react"
 
@@ -29,10 +28,9 @@ const MapSelect = () => {
                 <button>현지인채팅</button>
               </div>
               <div>
-                <FindAddress />
+
               </div>
             </PhotoModalContentsWrap>
-
           </PhotoSlideModal> : null}
         <MapPagePartWrapper>
           <MapPageContentsWrapper >강서구</MapPageContentsWrapper>

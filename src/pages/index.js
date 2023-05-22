@@ -57,7 +57,7 @@ const Home = () => {
               <SubTextWrap>서울 현지인과 외국여행객 간의 새로운 플랫폼</SubTextWrap>
             </TextWrapper>
             <div>
-              <VisitButton onClick={() => { router.push('/mapSelect') }}>
+              <VisitButton onClick={() => { router.push('/mapselect') }}>
                 지금 방문하기
               </VisitButton>
             </div>
