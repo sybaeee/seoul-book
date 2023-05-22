@@ -1,4 +1,4 @@
-import { ChatHeader, ChatHeaderTitle, ChatHostMsg, ChatListWrap, ChatMsgWrap, ChatTextInput, ChatUserMsg, ChatWrap } from "@/styles/chat/chat.styles";
+import { ChatHeader, ChatHeaderTitle, ChatHostMsg, ChatListWrap, ChatMsgList, ChatMsgWrap, ChatTextInput, ChatUserMsg, ChatViewWrap, ChatWrap } from "@/styles/chat/chat.styles";
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 
@@ -10,14 +10,9 @@ const ChatPageUI = ({
 }) => {
 
     return (
-        <ChatWrap>
-            <ChatListWrap>
-                <ChatHeader>
-                    <ArrowBackOutlinedIcon fontSize="medium" />
-                    <ChatHeaderTitle>Aaron Yang</ChatHeaderTitle>
-                    <CloseOutlinedIcon fontSize="medium" />
-                </ChatHeader>
-                <ChatMsgWrap>
+        <ChatViewWrap>
+            <ChatMsgWrap>
+                <ChatMsgList>
                     <ChatHostMsg>
                         호스트 채팅 영역입니다. test test test test test test test test test test test test test test test test 
                         test test test test test test test test test test test test test test test test
@@ -31,10 +26,10 @@ const ChatPageUI = ({
                     {msgList.map((msg, idx) => (
                         <ChatUserMsg key={idx}>{msg}</ChatUserMsg>
                     ))}
-                </ChatMsgWrap>
-            </ChatListWrap>       
+                </ChatMsgList>
+            </ChatMsgWrap>       
             <ChatTextInput ref={inputText} onKeyDown={chatEnterDown}></ChatTextInput>
-        </ChatWrap>
+        </ChatViewWrap>
     );
 }
 

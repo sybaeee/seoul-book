@@ -1,18 +1,18 @@
 import styled from "@emotion/styled";
 
-export const ChatWrap = styled.div`
-    max-width: 650px;
-    height: 600px;
+export const ChatMain = styled.div`
+    max-width: 800px;
+    max-height: 600px;
     margin: 0 auto;
     border: solid 1px #e9e9e9;
+
 `
 
-export const ChatListWrap = styled.div `
-    height: 82%;
+export const ChatWrap = styled.div`
     display: flex;
-    flex-direction: column;
-    
 `
+
+
 
 export const ChatHeader = styled.div`
     box-sizing: border-box;
@@ -24,14 +24,23 @@ export const ChatHeader = styled.div`
     align-items: center;
     justify-content: space-between;
     
-`
+    `
 
 export const ChatHeaderTitle = styled.div`
     font-weight: 400;
     font-size: 16px;
-
+    
 `
 
+export const ChatListWrap = styled.div `
+    width: 200px;
+    height: 560px;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #4c4c4c;
+    border-top: 0px;
+    
+`
 
 export const ChatContentWrap = styled.div`
     display: flex;
@@ -42,50 +51,59 @@ export const ChatContentWrap = styled.div`
 export const ChatContent = styled.div`
     box-sizing: border-box;
     width: 95%;
-    height: 80px;
-    margin: 20px 0 0;
+    height: 60px;
+    margin: 10px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
-
+    padding: 0 10px;
+    
     background: #FFFFFF;
-    border: 1px solid #4C4C4C;
-    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.4);
+    border: 1px solid #e9e9e9;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
     border-radius: 5px;
 `
 
 export const ChatContentPrImg = styled.div`
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     border-radius: 50px;
     background-image: url('/chat/pr_img.png');
     background-size: cover;
 `
 export const ChatContentTextWrap = styled.div`
-    width: 75%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    row-gap: 8px;
-    margin: 0 20px
     
 `
 export const ChatContentHostName = styled.div`
-    font-size: 16px;
-
+    font-size: 8px;
+    
 `
-export const ChatLastMsg = styled.div`
-    font-size: 12px;
-    padding: 0 3px;
 
+export const ChatViewWrap = styled.div`
+    max-width: 600px;
+    height: 560px;
+    margin: 0 auto;
+    border: solid 1px #4c4c4c;
+    border-left: 0px;
+    border-top: 0px;
 `
 
 export const ChatMsgWrap = styled.div`
+    
+`
+
+export const ChatMsgList = styled.div`
     width: 100%;
+    height: 440px;
     display: flex;
     flex-direction: column;
-
+    margin-bottom: 18px;
+    overflow-y: auto;
+    
 `
 
 export const ChatHostMsg = styled.div`
@@ -133,7 +151,7 @@ export const ChatTextInput = styled.textarea`
 
     background: #FFFFFF;
     border: 1px solid #4C4C4C;
-    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     font-size: 14px;
     line-height: 26px;
