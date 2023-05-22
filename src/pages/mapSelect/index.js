@@ -10,6 +10,8 @@ const MapSelect = () => {
     setModal(!modal)
   }
 
+  // /test/
+
   return (
     <>
       <MapPageWrapper>
