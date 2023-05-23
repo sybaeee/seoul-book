@@ -31,10 +31,11 @@ const Register = ()=>{
           <FormControl>
             <FormLabel>Languages</FormLabel>
             <FormGroup row>
-              <FormControlLabel control={<Checkbox />} label="Chinese" />
-              <FormControlLabel control={<Checkbox />} label="English" />
-              <FormControlLabel control={<Checkbox />} label="Japanese" />
-              <FormControlLabel control={<Checkbox />} label="Korean" />
+              <FormControlLabel value={'Chinese'} control={<Checkbox />} label="Chinese" />
+              <FormControlLabel value='English' control={<Checkbox />} label="English" />
+              <FormControlLabel value={'Japanese'} control={<Checkbox />} label="Japanese" />
+              <FormControlLabel value='Korean'control={<Checkbox />} label="Korean" />
+              <FormControlLabel value='Others'control={<Checkbox />} label="Others" />
             </FormGroup>
           </FormControl>
           <FormControl>
