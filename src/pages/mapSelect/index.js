@@ -10,7 +10,7 @@ const MapSelect = () => {
     setModal(!modal)
   }
 
-  // /test/
+
 
   return (
     <>
