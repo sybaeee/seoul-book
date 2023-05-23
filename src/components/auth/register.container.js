@@ -31,25 +31,25 @@ const Register = ()=>{
           <FormControl>
             <FormLabel>Languages</FormLabel>
             <FormGroup row>
-              <FormControlLabel value={'Chinese'} control={<Checkbox />} label="Chinese" />
-              <FormControlLabel value='English' control={<Checkbox />} label="English" />
-              <FormControlLabel value={'Japanese'} control={<Checkbox />} label="Japanese" />
-              <FormControlLabel value='Korean'control={<Checkbox />} label="Korean" />
-              <FormControlLabel value='Others'control={<Checkbox />} label="Others" />
+              <FormControlLabel value='1' control={<Checkbox />} label="Chinese" />
+              <FormControlLabel value='2' control={<Checkbox />} label="English" />
+              <FormControlLabel value='3' control={<Checkbox />} label="Japanese" />
+              <FormControlLabel value='4'control={<Checkbox />} label="Korean" />
+              <FormControlLabel value='5'control={<Checkbox />} label="Others" />
             </FormGroup>
           </FormControl>
           <FormControl>
             <FormLabel>Gender</FormLabel>
             <RadioGroup row>
-              <FormControlLabel value='female' label="Female" control={<Radio/>}/>
-              <FormControlLabel value='male' label="Male" control={<Radio/>}/>
+              <FormControlLabel value='0' label="Female" control={<Radio/>}/>
+              <FormControlLabel value='1' label="Male" control={<Radio/>}/>
             </RadioGroup>
           </FormControl>
           <FormControl>
             <FormLabel>Are you local provider? or visitor?</FormLabel>
             <RadioGroup row>
-              <FormControlLabel value='provider' label="Provider" control={<Radio/>}/>
-              <FormControlLabel value='visitor' label="Visitor" control={<Radio/>}/>
+              <FormControlLabel value='1' label="Provider" control={<Radio/>}/>
+              <FormControlLabel value='2' label="Visitor" control={<Radio/>}/>
             </RadioGroup>
           </FormControl>
           <Button variant="contained">Register</Button>
