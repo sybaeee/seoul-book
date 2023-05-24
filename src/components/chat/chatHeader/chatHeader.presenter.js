@@ -3,12 +3,16 @@ import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 
-const ChatHeaderUI = () => {
+const ChatHeaderUI = ({handleClose}) => {
     return (
         <ChatHeader>
             <ArrowBackOutlinedIcon fontSize="medium" />
             <ChatHeaderTitle>Chat List</ChatHeaderTitle>
-            <CloseOutlinedIcon fontSize="medium" />
+            <CloseOutlinedIcon 
+            fontSize="medium" 
+            onClick={handleClose}
+            style={{ cursor:'pointer'}}
+            />
         </ChatHeader>
     );
 }

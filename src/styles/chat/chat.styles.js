@@ -1,10 +1,26 @@
 import styled from "@emotion/styled";
 
+export const OverLay = styled.div`
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+`
+
 export const ChatMain = styled.div`
+    position: absolute;
+    top:50%;
+    left:50%;
     max-width: 800px;
     max-height: 600px;
     margin: 0 auto;
-    border: solid 1px #e9e9e9;
+    border: solid 1px #4c4c4c;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
 
 `
 
@@ -20,7 +36,7 @@ export const ChatHeader = styled.div`
     width: 100%;
     height: 40px;
     display: flex;
-    border: 1px solid #4C4C4C;
+    border-bottom: 1px solid #4C4C4C;
     align-items: center;
     justify-content: space-between;
     
@@ -37,7 +53,7 @@ export const ChatListWrap = styled.div `
     height: 560px;
     display: flex;
     flex-direction: column;
-    border: solid 1px #4c4c4c;
+    border-right: solid 1px #4c4c4c;
     border-top: 0px;
     
 `
@@ -84,12 +100,13 @@ export const ChatContentHostName = styled.div`
 `
 
 export const ChatViewWrap = styled.div`
+    position: relative;
     max-width: 600px;
     height: 560px;
     margin: 0 auto;
-    border: solid 1px #4c4c4c;
     border-left: 0px;
     border-top: 0px;
+    padding-top: 10px;
 `
 
 export const ChatMsgWrap = styled.div`
@@ -109,7 +126,7 @@ export const ChatMsgList = styled.div`
 export const ChatHostMsg = styled.div`
     word-break: break-all;
     padding: 5px 10px;
-    margin: 10px 10px 0 0;
+    margin: 0 10px 10px 0;
     max-width: 60%;
     align-self: flex-end;
     white-space: pre-wrap;
@@ -128,7 +145,7 @@ export const ChatHostMsg = styled.div`
 export const ChatUserMsg = styled.div`
     word-break: break-all;
     padding: 5px 10px;
-    margin: 10px 0 0 10px;
+    margin: 0 0 10px 10px;
     max-width: 60%;
     white-space: pre-wrap;
     flex-grow: 0;
@@ -143,11 +160,14 @@ export const ChatUserMsg = styled.div`
     color: #fff;
 `
 export const ChatTextInput = styled.textarea`
+    position: absolute;
     box-sizing: border-box;
-    width: 100%;
+    width: 98%;
     margin: 0 auto;
     height: 18%;
     padding: 10px;
+    left: 1%;
+    bottom: 8px;
 
     background: #FFFFFF;
     border: 1px solid #4C4C4C;

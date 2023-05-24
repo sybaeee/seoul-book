@@ -11,6 +11,7 @@ const ChatPage = () => {
         if (e.key === "Enter" && e.target.value) {
             setMsgList([...msgList, e.target.value]);
             e.target.value = "";
+
         }
     };
 

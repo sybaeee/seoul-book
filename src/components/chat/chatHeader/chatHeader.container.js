@@ -1,8 +1,8 @@
 import ChatHeaderUI from "./chatHeader.presenter";
 
-const ChatHeaderPage = () => {
+const ChatHeaderPage = ({handleClose}) => {
     return(
-        <ChatHeaderUI />
+        <ChatHeaderUI handleClose={handleClose} />
     );
 }
 
