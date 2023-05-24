@@ -11,6 +11,7 @@ import {
   InputIntroduction,
   InputText,
 } from "@/styles/registerForm.style";
+import MarkupNote from "@/components/MarkupNote";
 
 const RegisterForm = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -50,7 +51,8 @@ const RegisterForm = () => {
           <Title>Introduction</Title>
           <InputIntroduction type="Introduction" />
           <Title>Text</Title>
-          <InputText type="Text" />
+          <MarkupNote />
+          {/* <InputText type="Text" /> */}
           <ButtonBox>
             <Button onClick={() => console.log("폼을 제출했습니다.")}>
               Cancel

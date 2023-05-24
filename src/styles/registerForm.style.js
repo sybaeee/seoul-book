@@ -37,7 +37,7 @@ export const Input = styled.input`
   width: 800px;
   margin: 10px 0;
   padding: 10px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   border: 1px solid #ccc;
 `;
 
@@ -64,7 +64,7 @@ export const InputIntroduction = styled.input`
   min-height: 200px;
   margin: 10px 0;
   padding: 10px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   border: 1px solid #ccc;
 `;
 
