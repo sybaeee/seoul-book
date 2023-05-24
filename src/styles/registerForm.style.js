@@ -30,6 +30,7 @@ export const Text = styled.div`
 export const Title = styled.div`
   align-self: start;
   margin-top: 12px;
+  margin-bottom: 10px;
 `;
 
 export const Input = styled.input`
