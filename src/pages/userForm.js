@@ -17,6 +17,7 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
+import { SeoulGu } from "@/components/common/ReligionCategory";
 
 const userForm = () => {
   const [age, setAge] = React.useState("");
@@ -42,7 +43,7 @@ const userForm = () => {
               marginBottom: 4,
             }}
           >
-            <Title>Title</Title>
+            <Title>제목</Title>
             <TextField fullWidth label="Title" id="fullWidth" />
           </Box>
           <Box
@@ -52,11 +53,11 @@ const userForm = () => {
               marginBottom: 4,
             }}
           >
-            <Title>Language</Title>
+            <Title>언어</Title>
             <TextField fullWidth label="Language" id="fullWidth" />
           </Box>
 
-          <Title>Age</Title>
+          <Title>나이</Title>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Age</InputLabel>
             <Select
@@ -83,7 +84,7 @@ const userForm = () => {
               marginTop: 4,
             }}
           >
-            <Title>Introduction</Title>
+            <Title>자기소개</Title>
             <TextField fullWidth label="Introduction" id="fullWidth" />
           </Box>
           <Box
@@ -93,7 +94,7 @@ const userForm = () => {
               marginBottom: 4,
             }}
           >
-            <Title>Personality</Title>
+            <Title>성격</Title>
             <TextField fullWidth label="Personality" id="fullWidth" />
           </Box>
           <Box
@@ -103,14 +104,27 @@ const userForm = () => {
               marginBottom: 4,
             }}
           >
-            <Title>Personality</Title>
-            <TextField
-              fullWidth
-              label="Area and time of activity"
-              id="fullWidth"
-            />
+            <Title>활동 시간</Title>
+            <TextField fullWidth label="Time of activity" id="fullWidth" />
           </Box>
+          <Title>활동 지역</Title>
 
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">
+              Area of activity
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={age}
+              label="Age"
+              onChange={handleChange}
+            >
+              {SeoulGu.map((data) => (
+                <MenuItem value={10}>{data.title}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
           <ButtonBox>
             <Button onClick={() => console.log("폼을 제출했습니다.")}>
               Cancel
