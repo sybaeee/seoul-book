@@ -2,7 +2,8 @@
 import { LanguageElementWrap, LanguageWrap, ProfileContentsElementsWrapper, ProfileIntroduceWrap, TitleContentsElements, TitleContentsText } from "@/styles/profile/ProfileContentsElements.style"
 import { useState } from "react"
 
-const ProfileContentsElements = () => {
+const ProfileContentsElements = ({ data }) => {
+
 
   const [langugeBox, setLanguageBox] = useState([0, 0, 0, 0]);
 
@@ -29,7 +30,7 @@ const ProfileContentsElements = () => {
           {
             langugeBox.map((a, i) => {
               return (
-                <LanguageElementWrap>영어</LanguageElementWrap>
+                <LanguageElementWrap>{data.language}</LanguageElementWrap>
               )
             })
           }
@@ -40,7 +41,7 @@ const ProfileContentsElements = () => {
           성별
         </TitleContentsElements>
         <span>
-          남
+          {data.gender}
         </span>
       </ProfileIntroduceWrap>
       <ProfileIntroduceWrap>
@@ -56,7 +57,7 @@ const ProfileContentsElements = () => {
           활동지역 & 시간
         </TitleContentsElements>
         <span>
-          종로구
+          {data.place},{data.date}
         </span>
       </ProfileIntroduceWrap>
       <ProfileIntroduceWrap>
@@ -64,7 +65,7 @@ const ProfileContentsElements = () => {
           성격
         </TitleContentsElements>
         <span>
-          밝고 쾌활한 성격을 가지고 있습니다 여러분들이랑 즐거운 시간을 보내고 싶습니다
+          {data.personality}
         </span>
       </ProfileIntroduceWrap>
     </ProfileContentsElementsWrapper>

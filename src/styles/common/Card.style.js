@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-
+import photowrapper from "/public/seoul1.jpg"
 export const ImgWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -8,8 +8,13 @@ export const ImgWrapper = styled.div`
   justify-content: center;
 `;
 
-export const WapperCard = styled.div`
+export const Photowrap = styled.div`
+background-image: url('/public/seoul1.jpg');
 
+`
+
+
+export const WapperCard = styled.div`
    &:hover {
     transform: translateY(-20px);
     transition: all 0.3s linear;

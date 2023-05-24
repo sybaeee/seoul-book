@@ -6,9 +6,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useRouter } from 'next/router';
-import { WapperCard } from '@/styles/common/Card.style';
+import { Photowrap, WapperCard } from '@/styles/common/Card.style';
 
 export default function ImgMediaCard({ data }) {
+  console.log(data)
   const router = useRouter()
   const { id } = router.query
   return (
@@ -16,16 +17,17 @@ export default function ImgMediaCard({ data }) {
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"
-          alt="관광지"
+          alt="user"
           height="150"
-          image={"/public/namsanView.png".default}
+          image='/public/namsanView.png'
         />
+        <Photowrap></Photowrap>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {data}
+            {data.nickname}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            현지인들이 방문하는 로컬 관광지 소개시켜드립니다
+            {data.content}
           </Typography>
         </CardContent>
         <CardActions>

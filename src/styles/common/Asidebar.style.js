@@ -31,6 +31,11 @@ export const DetailCircleWrap = styled.div`
   }
 `;
 
+export const AsideProfileUI = styled.div`
+background-image: url('/ProfileMan.png');
+height: 145px;
+`
+
 export const DetailAsidebarwrap = styled.div`
   margin: 0 auto;
   gap: 3px;
@@ -72,4 +77,8 @@ export const DetailButton = styled.button`
   font-size: 16px;
   color: #ffffff;
   cursor: pointer;
+  &:hover{
+    background: #DAF2FF;
+    transition: all 0.2s linear;
+  }
 `;

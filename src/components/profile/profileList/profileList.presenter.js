@@ -3,8 +3,9 @@ import ReligionCategory from "@/components/common/ReligionCategory"
 import ImgMediaCard from "@/components/common/card"
 import { ImgWrapper } from "@/styles/common/Card.style"
 import { ProfileListWrap, ProfileSelectWrap } from "@/styles/profile/profileList.style"
+import { useState } from "react"
 
-const ProfileListUI = () => {
+const ProfileListUI = ({ dataList }) => {
 
   return (
     <ProfileListWrap>
@@ -13,30 +14,12 @@ const ProfileListUI = () => {
         <GenderSelector />
       </ProfileSelectWrap>
       <ImgWrapper>
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
+        {
+          dataList.map((v, i) => {
+
+            return (<ImgMediaCard data={v} key={i} />)
+          })
+        }
       </ImgWrapper>
     </ProfileListWrap>
   )

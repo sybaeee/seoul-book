@@ -23,12 +23,12 @@ const Slider = ({ sliderData }) => {
     <>
       <PhotoSlideWrapper style={{ width: `${wrapperWidth}px`, transform: `translateX(-${(slideWidth + slideMargin * 2) * currentSlide}px)` }}>
         {sliderData.map((data, index) => {
-         return (
+          return (
             <PhotoSlide key={index} style={{ backgroundImage: `url(${data.imgSrc})` }} onClick={() => { router.push(data.link) }}>
-        
+
             </PhotoSlide>
           )
-         
+
         })
         }
       </PhotoSlideWrapper>
