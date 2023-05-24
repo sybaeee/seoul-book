@@ -18,7 +18,7 @@ export default function ImgMediaCard({ data }) {
           component="img"
           alt="관광지"
           height="150"
-          image="/public/profile.png"
+          image={"/public/namsanView.png".default}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
