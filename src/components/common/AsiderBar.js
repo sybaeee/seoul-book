@@ -1,9 +1,5 @@
 
-import mail from "/public/Mail.png";
-import profile from "/public/ProfileMan.png";
-import Phone from "/public/Phone.png";
-import location from "/public/LocationIcon.png";
-import website from "/public/webSite.png";
+import profile from "/public/ProfileMan.png";;
 import { DetailAsidebarwrap, DetailButton, DetailCircleWrap, DetailRegistAside, FlexCenter, FlexGap3px, UserNameDetail } from "@/styles/common/Asidebar.style";
 
 const ProfileAsideBarUI = () => {

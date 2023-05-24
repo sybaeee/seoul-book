@@ -1,16 +1,11 @@
 
-
-// 자기소개,
-// 사용가능한 언어
-// 성별 
-// 연령대
-// 사진등록
-// 활동 지역 ex) 종로구 인근
-// 성격 
-
 import { LanguageElementWrap, LanguageWrap, ProfileContentsElementsWrapper, ProfileIntroduceWrap, TitleContentsElements, TitleContentsText } from "@/styles/profile/ProfileContentsElements.style"
+import { useState } from "react"
 
 const ProfileContentsElements = () => {
+
+  const [langugeBox, setLanguageBox] = useState([0, 0, 0, 0]);
+
 
   return (
     <ProfileContentsElementsWrapper>
@@ -31,9 +26,13 @@ const ProfileContentsElements = () => {
           사용가능한언어
         </TitleContentsElements>
         <LanguageWrap>
-          <LanguageElementWrap>영어</LanguageElementWrap>
-          <LanguageElementWrap>영어</LanguageElementWrap>
-          <LanguageElementWrap>영어</LanguageElementWrap>
+          {
+            langugeBox.map((a, i) => {
+              return (
+                <LanguageElementWrap>영어</LanguageElementWrap>
+              )
+            })
+          }
         </LanguageWrap>
       </ProfileIntroduceWrap>
       <ProfileIntroduceWrap>

@@ -5,8 +5,8 @@ import palace from '../../public/videos/palace57566.mp4'
 import { useState } from 'react';
 import Slider from '@/components/slider/Slider';
 import ImgMediaCard from '@/components/common/card';
-import { ImgWrpper } from '@/styles/common/Card.style';
 import { Grid } from '@mui/material';
+import { ImgWrapper } from '@/styles/common/Card.style';
 
 const Home = () => {
 
@@ -66,7 +66,7 @@ const Home = () => {
           <Slider sliderData={sliderData} />
 
           <Grid sx={{ flexGrow: 1 }} container spacing={1}>
-            <ImgWrpper>
+            <ImgWrapper>
               <ImgMediaCard />
               <ImgMediaCard />
               <ImgMediaCard />
@@ -76,7 +76,7 @@ const Home = () => {
               {tourCardArray.map((v, i) => {
 
               })}
-            </ImgWrpper>
+            </ImgWrapper>
           </Grid>
           <KoreaVideo autoPlay muted loop >
             <source src={palace} type="video/mp4" />

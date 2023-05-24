@@ -20,7 +20,7 @@ const Header = () => {
         <HearderList>
           <li onClick={() => { router.push('/') }}>홈</li>
           <li>오늘의 추천</li>
-          <li>실시간 예약</li>
+          <li onClick={() => { router.push('/profile') }}>실시간 예약</li>
           <li>커뮤니티</li>
           <li onClick={() => { router.push('/chat') }}>채팅</li>
         </HearderList>
