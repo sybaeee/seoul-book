@@ -1,6 +1,5 @@
-import { ChatHeader, ChatHeaderTitle, ChatHostMsg, ChatListWrap, ChatMsgList, ChatMsgWrap, ChatTextInput, ChatUserMsg, ChatViewWrap, ChatWrap } from "@/styles/chat/chat.styles";
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import { ChatHostMsg, ChatMsgList, ChatMsgWrap, ChatTextInput, ChatUserMsg, ChatViewWrap } from "@/styles/chat/chat.styles";
+import { useEffect, useRef } from "react";
 
 
 const ChatPageUI = ({
@@ -8,11 +7,17 @@ const ChatPageUI = ({
     chatEnterDown,
     msgList
 }) => {
+    const chatScroll = useRef();
+
+    useEffect(()=>{
+        const scrollDiv = chatScroll.current;
+        scrollDiv.scrollTop = scrollDiv.scrollHeight;
+    }, [msgList]);
 
     return (
         <ChatViewWrap>
             <ChatMsgWrap>
-                <ChatMsgList>
+                <ChatMsgList ref={chatScroll}>
                     <ChatHostMsg>
                         호스트 채팅 영역입니다. test test test test test test test test test test test test test test test test 
                         test test test test test test test test test test test test test test test test

@@ -1,9 +1,8 @@
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import ChatPageUI from "./chatPage.presenter";
 
 const ChatPage = () => {
     const [msgList, setMsgList] = useState([]);
-
     let inputText = useRef(null);
 
     const chatEnterDown = (e) => {
@@ -14,12 +13,15 @@ const ChatPage = () => {
 
         }
     };
+   
+
+
 
     return (
         <ChatPageUI
             inputText={inputText}
             chatEnterDown={chatEnterDown}      
-            msgList={msgList}     
+            msgList={msgList} 
          />
     );
 }

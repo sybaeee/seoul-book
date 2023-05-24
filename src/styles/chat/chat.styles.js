@@ -40,7 +40,7 @@ export const ChatHeader = styled.div`
     align-items: center;
     justify-content: space-between;
     
-    `
+`
 
 export const ChatHeaderTitle = styled.div`
     font-weight: 400;
