@@ -21,7 +21,6 @@ const MarkupNote = () => {
         width: "800px",
         height: "500px",
         backgroundColor: "#fff",
-        borderRadius: "10px",
       }}
     >
       <ReactQuill

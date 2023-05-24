@@ -52,7 +52,6 @@ const RegisterForm = () => {
           <InputIntroduction type="Introduction" />
           <Title>Text</Title>
           <MarkupNote />
-          {/* <InputText type="Text" /> */}
           <ButtonBox>
             <Button onClick={() => console.log("폼을 제출했습니다.")}>
               Cancel
