@@ -204,7 +204,7 @@ Tag.propTypes = {
 };
 
 
-const SeoulGu = [
+export const SeoulGu = [
   { title: '종로구', number: 1 },
   { title: '중구', number: 2 },
   { title: '용산구', number: 3 },
