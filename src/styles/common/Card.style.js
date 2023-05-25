@@ -9,7 +9,7 @@ export const ImgWrapper = styled.div`
 `;
 
 export const Photowrap = styled.div`
-background-image: url('/public/seoul1.jpg');
+background-image: url('/seoul1.jpg');
 
 `
 

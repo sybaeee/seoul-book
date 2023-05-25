@@ -4,7 +4,7 @@ import { ProfileContentsWrap, ProfileDetailMainWrapper, ProfileDetailTitle, Prof
 
 
 const ProfileDetailUI = ({ data }) => {
-  console.log(data)
+
   return (
     <ProfileDetailWrapper>
       <ProfileDetailTitleWrap>

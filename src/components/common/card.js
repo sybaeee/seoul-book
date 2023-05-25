@@ -9,7 +9,6 @@ import { useRouter } from 'next/router';
 import { Photowrap, WapperCard } from '@/styles/common/Card.style';
 
 export default function ImgMediaCard({ data }) {
-  console.log(data)
   const router = useRouter()
   const { id } = router.query
   return (
@@ -19,7 +18,7 @@ export default function ImgMediaCard({ data }) {
           component="img"
           alt="user"
           height="150"
-          image='/public/namsanView.png'
+          image='/namsanView.png'
         />
         <Photowrap></Photowrap>
         <CardContent>
