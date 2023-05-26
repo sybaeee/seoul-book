@@ -14,3 +14,9 @@ justify-content: space-around;
 align-items: center;
 `
 
+export const ProfileTitleWrap = styled.div`
+font-weight: 700;
+font-size: 50px;
+margin: 30px 120px;
+color: #bc6f25;
+`

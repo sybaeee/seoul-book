@@ -120,10 +120,37 @@ export const SliderButtonWrapper = styled.div`
 display: flex;
 margin-top: 30px;
 gap: 3px;
+justify-content: center;
 `
 export const SliderButton = styled.button`
-padding: 10px;
 
+border-radius: 30%;
+width: 100px;
+padding: 10px;
+background: rgb(247,150,192);
+background: radial-gradient(circle, rgba(247,150,192,1) 0%, rgba(118,174,241,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  &::before{
+    position: absolute;
+  content: "";
+  height: 0%;
+  width: 1px;
+ box-shadow:
+   -1px -1px 20px 0px rgba(255,255,255,1),
+   -4px -4px 5px 0px rgba(255,255,255,1),
+   7px 7px 20px 0px rgba(0,0,0,.4),
+   4px 4px 5px 0px rgba(0,0,0,.3);
+   right: 0;
+  top: 0;
+  transition: all 500ms ease;
+  }
+  &:hover{
+    background: transparent;
+  color: #76aef1;
+  box-shadow: none;
+  }
 `
 export const KoreaVideo = styled.video`
   position: fixed;

@@ -35,8 +35,8 @@ const Slider = ({ sliderData }) => {
         </PhotoSlideWrapper>
       </SliderWrap>
       <SliderButtonWrapper>
-        <SliderButton onClick={handlePrevClick}>prev</SliderButton>
-        <SliderButton onClick={handleNextClick}>Next</SliderButton>
+        <SliderButton onClick={handlePrevClick}>{'<'}</SliderButton>
+        <SliderButton onClick={handleNextClick}>{'>'}</SliderButton>
       </SliderButtonWrapper>
     </>
   )
