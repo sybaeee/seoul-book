@@ -19,7 +19,7 @@ export default function ImgMediaCard({ data }) {
           component="img"
           alt="user"
           height="150"
-          image="/public/namsanView.png"
+          image="/namsanView.png"
         />
         <Photowrap></Photowrap>
         <CardContent>
