@@ -1,34 +1,40 @@
-import { ChatDateTime, ChatHeader, ChatHeaderTitle, ChatHostMsg, ChatListWrap, ChatMsgWrap, ChatTextInput, ChatUserMsg } from "@/styles/chat/chat.styles";
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import { ChatHostMsg, ChatMsgList, ChatMsgWrap, ChatTextInput, ChatUserMsg, ChatViewWrap } from "@/styles/chat/chat.styles";
+import { useEffect, useRef } from "react";
 
 
-const ChatPageUI = () => {
+const ChatPageUI = ({
+    inputText,
+    chatEnterDown,
+    msgList
+}) => {
+    const chatScroll = useRef();
+
+    useEffect(()=>{
+        const scrollDiv = chatScroll.current;
+        scrollDiv.scrollTop = scrollDiv.scrollHeight;
+    }, [msgList]);
+
     return (
-        <ChatListWrap>
-            <ChatHeader>
-                <ArrowBackOutlinedIcon fontSize="large" />
-                <ChatHeaderTitle>Aaron Yang</ChatHeaderTitle>
-                <CloseOutlinedIcon fontSize="large" />
-            </ChatHeader>
+        <ChatViewWrap>
             <ChatMsgWrap>
-                <ChatHostMsg>test test test test test test test test test test test test test test test test
-                    test test test test test test test test test test test test test test test test
-                    test test test test test test test test test test test test test test test test
-                </ChatHostMsg>
-
-                <p></p>
-                <ChatUserMsg>test test test test test test test test test test test test test test test test </ChatUserMsg>
-                <p></p>
-
-                <ChatTextInput></ChatTextInput>
-
-
-            </ChatMsgWrap>
-
-
-
-        </ChatListWrap>
+                <ChatMsgList ref={chatScroll}>
+                    <ChatHostMsg>
+                        호스트 채팅 영역입니다. test test test test test test test test test test test test test test test test 
+                        test test test test test test test test test test test test test test test test
+                        test test test test test test test test test test test test test test test test
+                    </ChatHostMsg>
+                    <p></p>
+                    <ChatUserMsg>
+                        게스트 채팅 영역입니다. test test test test test test test test test test test test test test test test 
+                    </ChatUserMsg>
+                    <p></p>
+                    {msgList.map((msg, idx) => (
+                        <ChatUserMsg key={idx}>{msg}</ChatUserMsg>
+                    ))}
+                </ChatMsgList>
+            </ChatMsgWrap>       
+            <ChatTextInput ref={inputText} onKeyDown={chatEnterDown}></ChatTextInput>
+        </ChatViewWrap>
     );
 }
 

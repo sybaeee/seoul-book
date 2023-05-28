@@ -1,24 +1,24 @@
-import GenderSelector from "@/components/common/GenderSelector"
-import ReligionCategory from "@/components/common/ReligionCategory"
+import DropDownText from "@/components/common/DropdownText"
 import ImgMediaCard from "@/components/common/card"
-import { ImgWrpper } from "@/styles/common/Card.style"
+import { ImgWrapper } from "@/styles/common/Card.style"
 import { ProfileListWrap, ProfileSelectWrap } from "@/styles/profile/profileList.style"
-const ProfileListUI = () => {
+import { useState } from "react"
+
+const ProfileListUI = ({ dataList }) => {
 
   return (
     <ProfileListWrap>
       <ProfileSelectWrap>
-        <ReligionCategory />
-        <GenderSelector />
+        <DropDownText />
       </ProfileSelectWrap>
-      <ImgWrpper>
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-        <ImgMediaCard />
-      </ImgWrpper>
+      <ImgWrapper>
+        {
+          dataList.map((v, i) => {
+
+            return (<ImgMediaCard data={v} key={i} />)
+          })
+        }
+      </ImgWrapper>
     </ProfileListWrap>
   )
 }

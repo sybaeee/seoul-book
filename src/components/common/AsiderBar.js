@@ -1,10 +1,6 @@
 
-import mail from "/public/Mail.png";
-import profile from "/public/ProfileMan.png";
-import Phone from "/public/Phone.png";
-import location from "/public/LocationIcon.png";
-import website from "/public/webSite.png";
-import { DetailAsidebarwrap, DetailButton, DetailCircleWrap, DetailRegistAside, FlexCenter, FlexGap3px, UserNameDetail } from "@/styles/common/Asidebar.style";
+import profile from "../../../public/chat/pr_img.png";
+import { AsideProfileUI, DetailAsidebarwrap, DetailButton, DetailCircleWrap, DetailRegistAside, FlexCenter, FlexGap3px, UserNameDetail } from "@/styles/common/Asidebar.style";
 
 const ProfileAsideBarUI = () => {
 
@@ -12,7 +8,7 @@ const ProfileAsideBarUI = () => {
     <>
       <DetailRegistAside>
         <DetailCircleWrap>
-          <img src={profile}></img>
+          <AsideProfileUI></AsideProfileUI>
         </DetailCircleWrap>
         <UserNameDetail>홍길동</UserNameDetail>
         <DetailAsidebarwrap>

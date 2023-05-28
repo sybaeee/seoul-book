@@ -39,6 +39,7 @@ border: 1px solid #D6BD65;
 box-shadow: 0px 4px 29px rgba(0, 0, 0, 0.07);
 border-radius: 9px;
 margin: 71px 65px 34px;
+
   &:hover {
     transform: translateY(-20px);
     transition: all 0.3s linear;

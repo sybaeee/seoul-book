@@ -56,7 +56,7 @@ font-size: 18px;
 padding: 20px 20px;
 `
 
-export const AnimationTest= styled.div`
+export const AnimationTest = styled.div`
   text-align: center;
 
   
@@ -72,6 +72,11 @@ box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 border-radius: 8px;
 width: 405px;
 `
+
+export const SliderWrap = styled.div`
+overflow: hidden;
+`
+
 export const PhotoSlideWrapper = styled.div`
 display: flex;
 flex-direction: row;

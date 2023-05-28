@@ -3,16 +3,16 @@ import ProfileContentsElements from "@/components/common/DetailElements"
 import { ProfileContentsWrap, ProfileDetailMainWrapper, ProfileDetailTitle, ProfileDetailTitleWrap, ProfileDetailWrapper, ProfileInfoWrap } from "@/styles/profile/profileDetail.style"
 
 
-const ProfileDetailUI = () => {
+const ProfileDetailUI = ({ data }) => {
 
   return (
     <ProfileDetailWrapper>
       <ProfileDetailTitleWrap>
-        <ProfileDetailTitle>제목</ProfileDetailTitle>
+        <ProfileDetailTitle>{data.title}</ProfileDetailTitle>
       </ProfileDetailTitleWrap>
       <ProfileDetailMainWrapper>
         <ProfileContentsWrap>
-          <ProfileContentsElements />
+          <ProfileContentsElements data={data} />
         </ProfileContentsWrap>
         <ProfileInfoWrap>
           <ProfileAsideBarUI />

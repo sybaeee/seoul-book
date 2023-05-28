@@ -2,16 +2,18 @@
 import { AnimationTest, GuidLineContents, GuideLineWrap, KoreaVideo, MainTextWrap, MainWrap, PhotoSlide, PhotoSlideWrapper, SliderButton, SliderButtonWrapper, SubTextWrap, TextWrapper, VisitButton } from '@/styles/home.styles';
 import { useRouter } from 'next/router';
 import palace from '../../public/videos/palace57566.mp4'
-import { useState } from 'react';
+
 import Slider from '@/components/slider/Slider';
 import ImgMediaCard from '@/components/common/card';
-import { ImgWrpper } from '@/styles/common/Card.style';
 import { Grid } from '@mui/material';
+import { ImgWrapper } from '@/styles/common/Card.style';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
 
-  const [tourCardArray, setTourCardAttay] = useState([0, 0, 0])
   const router = useRouter();
+  let carddata = useSelector((state) => { return state })
+
 
   const sliderData = [
     {
@@ -66,21 +68,15 @@ const Home = () => {
           <Slider sliderData={sliderData} />
 
           <Grid sx={{ flexGrow: 1 }} container spacing={1}>
-            <ImgWrpper>
-              <ImgMediaCard />
-              <ImgMediaCard />
-              <ImgMediaCard />
-              <ImgMediaCard />
-              <ImgMediaCard />
-              <ImgMediaCard />
-              {tourCardArray.map((v, i) => {
-
-              })}
-            </ImgWrpper>
+            <ImgWrapper>
+              {carddata.card.map((v, i) => (
+                <ImgMediaCard data={v} />
+              ))}
+            </ImgWrapper>
           </Grid>
-          <KoreaVideo autoPlay muted loop >
+          {/* <KoreaVideo autoPlay muted loop >
             <source src={palace} type="video/mp4" />
-          </KoreaVideo>
+          </KoreaVideo> */}
         </MainWrap>
       </>
     </>

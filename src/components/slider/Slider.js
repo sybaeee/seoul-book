@@ -1,4 +1,4 @@
-import { PhotoSlide, PhotoSlideWrapper, SliderButton, SliderButtonWrapper } from '@/styles/home.styles';
+import { PhotoSlide, PhotoSlideWrapper, SliderButton, SliderButtonWrapper, SliderWrap } from '@/styles/home.styles';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 
@@ -21,17 +21,19 @@ const Slider = ({ sliderData }) => {
 
   return (
     <>
-      <PhotoSlideWrapper style={{ width: `${wrapperWidth}px`, transform: `translateX(-${(slideWidth + slideMargin * 2) * currentSlide}px)` }}>
-        {sliderData.map((data, index) => {
-         return (
-            <PhotoSlide key={index} style={{ backgroundImage: `url(${data.imgSrc})` }} onClick={() => { router.push(data.link) }}>
-        
-            </PhotoSlide>
-          )
-         
-        })
-        }
-      </PhotoSlideWrapper>
+      <SliderWrap>
+        <PhotoSlideWrapper style={{ width: `${wrapperWidth}px`, transform: `translateX(-${(slideWidth + slideMargin * 2) * currentSlide}px)` }}>
+          {sliderData.map((data, index) => {
+            return (
+              <PhotoSlide key={index} style={{ backgroundImage: `url(${data.imgSrc})` }} onClick={() => { router.push(data.link) }}>
+
+              </PhotoSlide>
+            )
+
+          })
+          }
+        </PhotoSlideWrapper>
+      </SliderWrap>
       <SliderButtonWrapper>
         <SliderButton onClick={handlePrevClick}>prev</SliderButton>
         <SliderButton onClick={handleNextClick}>Next</SliderButton>
