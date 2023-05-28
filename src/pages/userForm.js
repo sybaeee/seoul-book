@@ -126,7 +126,7 @@ const userForm = () => {
             </Select>
           </FormControl>
           <ButtonBox>
-            <Button onClick={() => console.log("폼을 제출했습니다.")}>
+            <Button onClick={() => console.log("폼을 제출했습니다")}>
               Cancel
             </Button>
             <Button onClick={handleSubmit}>Submit</Button>
