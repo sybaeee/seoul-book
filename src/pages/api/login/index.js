@@ -12,7 +12,7 @@ const handler = async (req, res) => {
     let conn = null;
     try {
       conn = await pool.getConnection();
-      let [rows] = await conn.query('SELECT pw FROM tbl_users WHERE email=?', inputEmail);
+      let [rows] = await conn.query('SELECT * FROM tbl_users WHERE email=?', inputEmail);
       if (rows.length === 0) {
         res.status(401).json({ message: '로그인 실패' });
         return;
@@ -24,10 +24,13 @@ const handler = async (req, res) => {
         res.status(401).json({ message: '로그인 실패' });
         return;
       }
-
       const token = jwt.sign(user, process.env.JWT_SECRET, {
         expiresIn: '1h',
       });
+
+      
+      const verified = jwt.verify(token, process.env.JWT_SECRET);
+      console.log(verified);
 
       res.status(200).json({ message: '로그인성공', token })
 
