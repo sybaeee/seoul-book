@@ -7,14 +7,14 @@ const ChatPage = () => {
 
     const chatEnterDown = (e) => {
         console.log(e.key);
-        if (e.key === "Enter" && e.target.value) {
-            setMsgList([...msgList, e.target.value]);
-            e.target.value = "";
-
+        if(e.target.value != ""){
+            if (e.key === "Enter" && e.target.value) {
+                setMsgList([...msgList, e.target.value]);
+                e.target.value = "";
+            }
         }
     };
    
-
 
 
     return (
