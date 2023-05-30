@@ -2,6 +2,48 @@ import pool from "../../../../db";
 import bcrypt from "bcryptjs";
 
 const handler = async (req, res) => {
+  if (req.method === 'GET'){
+    let conn = null;
+    try{
+      let {gender, location} = req.query;
+      let values =[];
+      let sql = `
+      select *
+      from tbl_users 
+      where userType = 1 
+      `;
+      if(gender !== undefined){
+        sql += ' and gender = ? ';
+        values.push(Number(gender));
+      }
+      if(location.length !== 0){
+        sql += 'and email in (select email from user_location where location in (';        
+         location.forEach((element, idx) => {
+            sql += idx !== location.length-1 ? ' ?, ' : ' ? ';
+            values.push(element);
+         });
+
+         sql += '))'
+
+      }
+
+      sql += ' order by updatedAt desc';
+
+      conn = await pool.getConnection();
+      let [result] = await conn.query(sql, values);
+      console.log(location);
+
+      res.status(200).json(result);
+    }catch(err){
+      console.log(err);
+      res.status(500).json({message:'서버오류'});
+    }finally{
+      if(conn !== null) conn.release();
+    }
+
+    return;
+  }
+
   if (req.method === 'POST') {
 
     let conn = null;
