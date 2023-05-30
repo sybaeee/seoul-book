@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import { OPTION_LIST } from "@/constant/list";
 import {
   Wrapper,
   Text,
   Title,
-  Select,
-  Option,
-} from "@/styles/detail.style";
-import { Button, ButtonBox, FormContainer, FormWrapper, Input, InputIntroduction, InputText } from "@/style/registerForm.style";
+  Button,
+  ButtonBox,
+  FormContainer,
+  FormWrapper,
+  Input,
+  InputIntroduction,
+  InputText,
+} from "@/styles/registerForm.style";
+import MarkupNote from "@/components/MarkupNote";
 
 const RegisterForm = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -47,7 +51,7 @@ const RegisterForm = () => {
           <Title>Introduction</Title>
           <InputIntroduction type="Introduction" />
           <Title>Text</Title>
-          <InputText type="Text" />
+          <MarkupNote />
           <ButtonBox>
             <Button onClick={() => console.log("폼을 제출했습니다.")}>
               Cancel
