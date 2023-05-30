@@ -19,6 +19,9 @@ const Header = (props) => {
   const onGoProfilePage = () => {
     router.push('/profile')
   }
+  const onGoReviewPage = () => {
+    router.push('/detail')
+  }
 
   const onLogout =()=>{
     setHeader({
@@ -37,9 +40,8 @@ const Header = (props) => {
       <HearderLIstWrap>
         <HearderList>
           <li onClick={() => router.push('/')}>홈</li>
-          <li>오늘의 추천</li>
-          <li onClick={onGoProfilePage}>실시간 예약</li>
-          <li>커뮤니티</li>
+          <li onClick={onGoProfilePage}>현지인투어</li>
+          <li onClick={onGoReviewPage}>리뷰</li>
           <li onClick={() => router.push('/chat')}>채팅</li>
         </HearderList>
         {header.isLoggedIn ? (
@@ -58,4 +60,4 @@ const Header = (props) => {
   )
 }
 
-export default Header
+export default Header;

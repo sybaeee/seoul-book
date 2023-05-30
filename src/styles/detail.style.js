@@ -43,15 +43,15 @@ export const Title = styled.div`
 
 export const SubTitle = styled.div`
   font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 28px;
   margin-bottom: 70px;
 `;
 
 export const Text = styled.div`
   font-weight: 400;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 32px;
 `;
 
 export const Bar = styled.div`
@@ -91,3 +91,17 @@ export const BoxText = styled.div`
   line-height: 24px;
   color: #3a3738;
 `;
+
+export const BottomBox = styled.div`
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  justify-content: space-between;
+`;
+
+export const buttonBox = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+// export const ReviewCard = styled.div``

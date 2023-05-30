@@ -21,6 +21,7 @@ export const ChatMain = styled.div`
     border: solid 1px #4c4c4c;
     transform: translate(-50%, -50%);
     border-radius: 10px;
+    background-color: #fff;
 
 `
 
@@ -101,7 +102,7 @@ export const ChatContentHostName = styled.div`
 
 export const ChatViewWrap = styled.div`
     position: relative;
-    max-width: 600px;
+    min-width: 600px;
     height: 560px;
     margin: 0 auto;
     border-left: 0px;
@@ -110,7 +111,6 @@ export const ChatViewWrap = styled.div`
 `
 
 export const ChatMsgWrap = styled.div`
-    
 `
 
 export const ChatMsgList = styled.div`
@@ -147,9 +147,8 @@ export const ChatUserMsg = styled.div`
     padding: 5px 10px;
     margin: 0 0 10px 10px;
     max-width: 60%;
+    align-self: flex-start;
     white-space: pre-wrap;
-    flex-grow: 0;
-    flex-basis: auto;
 
     background: #1B3E73;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);

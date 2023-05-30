@@ -2,11 +2,15 @@
 import { DropdownMenuWrap, LocalTextButton } from "@/styles/dropdownText.style";
 import GenderSelector from "./GenderSelector";
 import ReligionCategory from "./ReligionCategory";
+import { useRouter } from "next/router";
 
 
 
 const DropDownText = () => {
-
+  const router = useRouter();
+  const TextWrite = () => {
+    router.push('/profile/form')
+  }
   return (
     <>
       <DropdownMenuWrap>
@@ -15,7 +19,7 @@ const DropDownText = () => {
       </DropdownMenuWrap>
       <div></div>
       <DropdownMenuWrap>
-        <LocalTextButton>글쓰기</LocalTextButton>
+        <LocalTextButton onClick={TextWrite}>글쓰기</LocalTextButton>
       </DropdownMenuWrap>
     </>
   )

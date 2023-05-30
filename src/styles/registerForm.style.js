@@ -30,13 +30,14 @@ export const Text = styled.div`
 export const Title = styled.div`
   align-self: start;
   margin-top: 12px;
+  margin-bottom: 10px;
 `;
 
 export const Input = styled.input`
   width: 800px;
   margin: 10px 0;
   padding: 10px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   border: 1px solid #ccc;
 `;
 
@@ -63,7 +64,7 @@ export const InputIntroduction = styled.input`
   min-height: 200px;
   margin: 10px 0;
   padding: 10px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   border: 1px solid #ccc;
 `;
 
