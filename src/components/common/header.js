@@ -1,21 +1,32 @@
+import { accessTokenState, headerSelector, headerState } from "@/redux/login.store";
 import { HeaderWrap, HearderLIstWrap, HearderList, LoginButton, LoginWrap, LogoWrap, MembershipButton } from "@/styles/common/header.styles";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
 
-const Header = () => {
+const Header = (props) => {
   const router = useRouter()
-  const [isLoginPage, setIsLoginPage] = useState(false)
-
+  const header = useRecoilValue(headerSelector);
+  const setHeader = useSetRecoilState(headerState);
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
 
 
   const goLoginPage = () => {
     router.push('/auth/login')
-    setIsLoginPage(true)
   }
 
   const onGoProfilePage = () => {
     router.push('/profile')
+  }
+
+  const onLogout =()=>{
+    setHeader({
+      isLoggedIn: false,
+      authToken: null,
+    });
+    setAccessToken(null);
+    localStorage.removeItem('authToken');
   }
 
   return (
@@ -31,10 +42,10 @@ const Header = () => {
           <li>커뮤니티</li>
           <li onClick={() => router.push('/chat')}>채팅</li>
         </HearderList>
-        {isLoginPage ? (
+        {header.isLoggedIn ? (
           <LoginWrap>
             <LoginButton onClick={() => router.push('/dashboard')}>마이페이지</LoginButton>
-            <MembershipButton onClick={() => setIsLoginPage(false)}>로그아웃</MembershipButton>
+            <MembershipButton onClick={onLogout}>로그아웃</MembershipButton>
           </LoginWrap>
         ) : (
           <LoginWrap>
