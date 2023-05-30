@@ -1,6 +1,15 @@
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
-import { v4 as uuidv4 } from 'uuid';
+// s3 접근하기 위해 불러옴
+import {
+  S3Client,
+  PutObjectCommand,
+  GetObjectCommand,
+  DeleteObjectCommand,
+} from "@aws-sdk/client-s3";
+// presigned url 이용하기 위해 불러옴
+// import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import multer from 'multer';
+import pool from "../../../../db";
+import jwt, { verify } from "jsonwebtoken";
 
 const s3Client = new S3Client({
   region: process.env.AWS_S3_REGION,
@@ -8,56 +17,91 @@ const s3Client = new S3Client({
     accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
   },
-  endpoint: 'https://s3.ap-northeast-2.amazonaws.com',
 });
+
+
+// 파일 업로드
+export async function uploadFile(fileBuffer, fileName, mimetype) {
+  const uploadParams = {
+    Bucket: process.env.AWS_S3_BUCKET_NAME,
+    Key: fileName,
+    Body: fileBuffer,
+    ContentType: mimetype,
+  };
+
+  const res = await s3Client.send(new PutObjectCommand(uploadParams));
+  return res.$metadata.httpStatusCode;
+}
+
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+}
 
 // Create a multer storage configuration
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 export default async function handler(req, res) {
+  // console.log(req.headers.authorization);
   if (req.method === 'POST') {
+    const token = req.headers.authorization.replace('Bearer ', '');
+    console.log(token);
+    let email = null;
+    try{
+      const verify = jwt.verify(token,process.env.JWT_SECRET);
+      email = verify.email;
+    }catch(err){
+      console.log(err);
+      res.status(401).json({err:'권한이 없음'});
+      return;
+    }
+    
+
+    let conn = null;
     try {
-      await upload.single('file')(req, res, async (err) => {
-        if (err) {
-          console.error('Error uploading file:', err);
-          res.status(500).json({ error: 'Failed to upload file' });
-          return;
-        }
+      await runMiddleware(req, res, upload.single("image"));
+      console.log(req.body);
+      const fileBuffer = req.file.buffer;
+      const fileName = req.body.name;
+      const fileType = req.file.mimetype;
 
-        const file = req.file;
-        if (!file) {
-          res.status(400).json({ error: 'No file found in the request' });
-          return;
-        }
+      await uploadFile(fileBuffer, fileName, fileType);
 
-        // Generate a unique file name using UUID
-        const fileName = `${uuidv4()}_${file.originalname}`;
+      let sql = `
+        UPDATE tbl_users
+        SET profileImg = ?
+        WHERE email = ?
+      `;
+      conn = await pool.getConnection();
+      await conn.query(sql, [`https://seoulbook.s3.ap-northeast-2.amazonaws.com/${fileName}`, email]);
 
-        // Upload the file to AWS S3
-        const uploadParams = {
-          Bucket: 'seoulbook',
-          Key: fileName,
-          Body: file.buffer,
-        };
-
-        try {
-          await s3Client.send(new PutObjectCommand(uploadParams));
-
-          // Optionally, generate a signed URL for accessing the uploaded file
-          const imageUrl = `https://seoulbook.s3.ap-northeast-2.amazonaws.com/${uploadParams.Key}`;
-
-          res.status(200).json({ url: imageUrl });
-        } catch (error) {
-          console.error('Error uploading file:', error);
-          res.status(500).json({ error: 'Failed to upload file' });
-        }
+      return res.status(201).json({
+        message: "s3 uploading with multer succeeded",
+        profileImg: `https://seoulbook.s3.ap-northeast-2.amazonaws.com/${fileName}`,
       });
+
     } catch (error) {
       console.error('Error uploading file:', error);
-      res.status(500).json({ error: 'Failed to upload file' });
+      res.status(500).json({ error: 'Failed to upload fileddd' });
+    }finally{
+      if(conn!==null) conn.release();
     }
   } else {
     res.status(405).json({ error: 'Method Not Allowed' });
   }
 }
+
+
+export const config = {
+  api: {
+    bodyParser: false,
+    sizeLimit: "4mb", // 업로드 이미지 용량 제한
+  },
+};
