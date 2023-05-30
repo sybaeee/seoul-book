@@ -1,7 +1,7 @@
 import { accessTokenState, headerSelector, headerState } from "@/redux/login.store";
 import { HeaderWrap, HearderLIstWrap, HearderList, LoginButton, LoginWrap, LogoWrap, MembershipButton } from "@/styles/common/header.styles";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
 
@@ -10,7 +10,15 @@ const Header = (props) => {
   const header = useRecoilValue(headerSelector);
   const setHeader = useSetRecoilState(headerState);
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
-
+  useEffect(()=>{
+		if(localStorage.getItem("accessToken")){
+      setAccessToken(localStorage.getItem("accessToken")||"");
+      setHeader({
+        isLoggedIn: true,
+        authToken: localStorage.getItem("accessToken"),
+      });
+    }
+  },[])
 
   const goLoginPage = () => {
     router.push('/auth/login')
@@ -29,7 +37,7 @@ const Header = (props) => {
       authToken: null,
     });
     setAccessToken(null);
-    localStorage.removeItem('authToken');
+    localStorage.removeItem('accessToken');
   }
 
   return (
