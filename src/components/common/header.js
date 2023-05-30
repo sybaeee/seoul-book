@@ -20,7 +20,7 @@ const Header = (props) => {
     router.push('/profile')
   }
 
-  const onLogout =()=>{
+  const onLogout = () => {
     setHeader({
       isLoggedIn: false,
       authToken: null,

@@ -17,6 +17,13 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
+
+import Chip from '@mui/material/Chip';
+import Autocomplete from '@mui/material/Autocomplete';
+import TextFields from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
+
+
 import { SeoulGu } from "@/components/common/ReligionCategory";
 
 const userForm = () => {
@@ -54,7 +61,23 @@ const userForm = () => {
             }}
           >
             <Title>언어</Title>
-            <TextField fullWidth label="Language" id="fullWidth" />
+            <Stack spacing={3} sx={{ width: 500 }}>
+              <Autocomplete
+                multiple
+                id="tags-standard"
+                options={language}
+                getOptionLabel={(option) => option.title}
+                defaultValue={[language[0]]}
+                renderInput={(params) => (
+                  <TextFields
+                    {...params}
+                    variant="standard"
+                    label="언어 선택"
+                    placeholder="가능한 언어"
+                  />
+                )}
+              />
+            </Stack>
           </Box>
 
           <Title>나이</Title>
@@ -67,12 +90,12 @@ const userForm = () => {
               label="Age"
               onChange={handleChange}
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-              <MenuItem value={40}>forty</MenuItem>
-              <MenuItem value={50}>fifty</MenuItem>
-              <MenuItem value={60}>older than sixty</MenuItem>
+              <MenuItem value={10}>10대</MenuItem>
+              <MenuItem value={20}>20대</MenuItem>
+              <MenuItem value={30}>30대</MenuItem>
+              <MenuItem value={40}>40대</MenuItem>
+              <MenuItem value={50}>50대</MenuItem>
+              <MenuItem value={60}>60대이상</MenuItem>
             </Select>
           </FormControl>
           <Box
@@ -136,5 +159,10 @@ const userForm = () => {
     </Wrapper>
   );
 };
-
+const language = [
+  { title: '영어', year: 1994 },
+  { title: '중국어', year: 1972 },
+  { title: '일본어', year: 1974 },
+  { title: '기타', year: 2008 },
+];
 export default userForm;
