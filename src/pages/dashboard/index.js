@@ -1,3 +1,4 @@
+import { withAuth } from "@/components/common/hoc/withAuth";
 import DashLayout from "@/components/dashboard/layout";
 import Overview from "@/components/dashboard/overview";
 import SideNav from "@/components/dashboard/sideNav";
@@ -11,4 +12,4 @@ const DashBoardPage =()=>{
   );
 }
 
-export default DashBoardPage;
+export default withAuth(DashBoardPage);

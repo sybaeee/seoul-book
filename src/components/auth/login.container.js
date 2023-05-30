@@ -1,3 +1,4 @@
+import { accessTokenState, headerState } from "@/redux/login.store";
 import { Wrap, AuthCard, CardHeader, HeaderTitle, HeaderDetail, PageLink, AuthForm } from "@/styles/auth.styles";
 
 import { TextField, Button } from "@mui/material";
@@ -5,6 +6,7 @@ import axios from "axios";
 
 import { useFormik } from 'formik';
 import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
 import * as yup from 'yup';
 
 const validationSchema = yup.object({
@@ -13,6 +15,9 @@ const validationSchema = yup.object({
 });
 
 const Login = () => {
+  const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+
+  const [header, setHeader] = useRecoilState(headerState);
 
   const router = useRouter();
   const formik = useFormik({
@@ -25,7 +30,12 @@ const Login = () => {
       console.log(values);
       axios.post('/api/login', values)
         .then(res => {
-          console.log(res);
+          setAccessToken(res.data.token);
+          localStorage.setItem("accessToken",res.data.token);
+          setHeader({
+            isLoggedIn: true,
+            authToken: res.data.token,
+          });
           router.replace('/');
         }).catch(err => {
           console.log(err);

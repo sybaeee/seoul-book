@@ -21,6 +21,7 @@ export const ChatMain = styled.div`
     border: solid 1px #4c4c4c;
     transform: translate(-50%, -50%);
     border-radius: 10px;
+    background-color: #fff;
 
 `
 
