@@ -1,3 +1,4 @@
+import MarkupNote from '@/components/MarkupNote';
 import { accessTokenState } from '@/redux/login.store';
 import { Avatar } from '@mui/material';
 import axios from 'axios';
@@ -68,6 +69,8 @@ const ProfilePage = () => {
           Upload
         </button>
       </form>
+
+      <MarkupNote/>
     </div>
   );
 };
